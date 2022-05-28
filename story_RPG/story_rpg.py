@@ -24,7 +24,7 @@ def main():
         start_syl.append(start_vowel)
         mid_syl.append(mid_vowel)
         end_syl.append(end_vowel)
-    number_names = int(input('Random name generator, enter how many names you want to generate:'))
+    number_names = int(input('Random name generator, enter how many stories you want to generate:'))
 
     while True:
         if number_names == 0:
