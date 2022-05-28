@@ -1,6 +1,6 @@
 import random
 
-
+# More questions can be always added
 bank_of_questions = {
     'Is water wet?' : 1,
     'Is cat a dog?': 0,
@@ -27,13 +27,16 @@ def printing(rand_sel):
     key_1 = list(bank_of_questions)[rand_sel]
     val_1 = list(bank_of_questions.values())[rand_sel]
     print(key_1)
-    ans = input('Enter answer YES or NO')
-    if ans == 'YES':
-        test = 1
-        if key_1 == test:
-            print("Great!")
+    ans = int(input('Enter answer: 1 for YES or 0 for NO'))
+    while True:
+        if ans == val_1:
+            print("Correct")
+            break
+        elif ans != val_1:
+            print("Incorrect!")
+            break
         else:
-            print("Nooo!")
+            print("Try again type 1 or 0 onnly!")
 
 
 main()
