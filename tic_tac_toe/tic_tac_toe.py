@@ -95,13 +95,39 @@ def main():
     row_2 = ['R2', 'D', 'E', 'F']
     row_3 = ['R3', 'G', 'H', 'I']
     print(*title, '\n', row_1, '\n', row_2, '\n', row_3)
+    PC_or_USER = input('Do you want to play with PC or with a user? YES or NO')
+
     while True:
-        choice_1 = input(f'Player {player1} "O" circle - type position: ')
-        played_counter += 1
-        game_play1(choice_1, row_1, row_2, row_3, title, played_counter)
-        choice_2 = input(f'Player {player2} "X" cross - type position: ')
-        played_counter += 1
-        game_play1(choice_2, row_1, row_2, row_3, title, played_counter)
-        # game_play2(choice_1, row_1, row_2, row_3, title)
-        score_check(row_1,row_2,row_3)
+        if PC_or_USER == 'NO':
+            choice_1 = input(f'Player {player1} "O" circle - type position: ')
+            played_counter += 1
+            game_play1(choice_1, row_1, row_2, row_3, title, played_counter)
+            choice_2 = input(f'Player {player2} "X" cross - type position: ')
+            played_counter += 1
+            game_play1(choice_2, row_1, row_2, row_3, title, played_counter)
+            # game_play2(choice_1, row_1, row_2, row_3, title)
+            score_check(row_1,row_2,row_3)
+        elif PC_or_USER == 'YES':
+            choice_1 = input(f'Player {player1} "O" circle - type position: ')
+            played_counter += 1
+
+            poll = ["A", "B","C","D","E","F","G","H","I"]
+            poll.remove(choice_1)
+
+            game_play1(choice_1, row_1, row_2, row_3, title, played_counter)
+
+            choice_2 = random.choice(poll)
+            played_counter += 1
+            game_play1(choice_2, row_1, row_2, row_3, title, played_counter)
+            poll.remove(choice_2)
+            # game_play2(choice_1, row_1, row_2, row_3, title)
+            score_check(row_1, row_2, row_3)
+            import time
+            for x in range(0, 5):
+                b = "Loading" + "." * x
+                print(b, end="\r")
+                time.sleep(1)
+        else:
+            print("In this case, good bye")
+            break
 main()
