@@ -95,7 +95,7 @@ def main():
     row_2 = ['R2', 'D', 'E', 'F']
     row_3 = ['R3', 'G', 'H', 'I']
     print(*title, '\n', row_1, '\n', row_2, '\n', row_3)
-    PC_or_USER = input('Do you want to play with PC or with a user? YES or NO')
+    PC_or_USER = input('\tEnter YES to play with PC\n    Enter NO to play with other player\n:')
 
     while True:
         if PC_or_USER == 'NO':
@@ -106,7 +106,7 @@ def main():
             played_counter += 1
             game_play1(choice_2, row_1, row_2, row_3, title, played_counter)
             # game_play2(choice_1, row_1, row_2, row_3, title)
-            score_check(row_1,row_2,row_3)
+            score_check(row_1, row_2, row_3)
         elif PC_or_USER == 'YES':
             choice_1 = input(f'Player {player1} "O" circle - type position: ')
             played_counter += 1
