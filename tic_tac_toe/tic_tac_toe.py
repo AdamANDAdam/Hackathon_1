@@ -7,13 +7,13 @@ def score_check(row1, row2, row3):
     if row1.count("O") == 3 or row2.count("O") == 3 or row3.count("O") == 3:
         print("Player with circles won!")
         sys.exit()
-    elif row1[1] == row2[1] == row3[1] == 'O' or row1[2] == row2[2] == row3[2] == 'O' or row1[3] == row2[3] == row3[3] == 'O' or row1[1] == row2[2] == row3[3] == 'O' :
+    elif row1[1] == row2[1] == row3[1] == 'O' or row1[2] == row2[2] == row3[2] == 'O' or row1[3] == row2[3] == row3[3] == 'O' or row1[1] == row2[2] == row3[3] == 'O' or row1[3] == row2[2] == row3[1] == 'O' :
         print("Player with circles won!")
         sys.exit()
     elif row1.count("X") == 3 or row2.count("X") == 3 or row3.count("X") == 3:
         print("Player with crosses won!")
         sys.exit()
-    elif row1[1] == row2[1] == row3[1] == 'X' or row1[2] == row2[2] == row3[2] == 'X' or row1[3] == row2[3] == row3[3] == 'X' or row1[1] == row2[2] == row3[3] == 'X':
+    elif row1[1] == row2[1] == row3[1] == 'X' or row1[2] == row2[2] == row3[2] == 'X' or row1[3] == row2[3] == row3[3] == 'X' or row1[1] == row2[2] == row3[3] == 'X' or row1[3] == row2[2] == row3[1] == 'X':
         print("Player with crosses won!")
         sys.exit()
 
